@@ -38,7 +38,6 @@ app.post("/users", (req, res) => {
 
 app.get("/users/:id", (req, res) => {
     let id = req.params.id;
-  
     User.findById(id, (err, doc) => {
       if (!err) {
         if (doc) res.json(doc);
@@ -65,5 +64,14 @@ app.get("/users", (req, res) => {
 app.listen(3000, () => {
     console.log("Server is running!!");
   });
+
+  // Delete
+app.delete("/users/:id", (req, res) => {
+  let id = req.params.id;
+  User.findByIdAndDelete(id, (err) => {
+    if (!err) res.json({ messagae: "Success!" });
+    else res.status(500).json(err);
+  });
+});
 
 

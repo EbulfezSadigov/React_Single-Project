@@ -21,10 +21,6 @@ const User = () => {
             .then(res => setdata(res.data))
     }, [data])
 
-    const deleted = (id)=>{
-        axios.delete(`http://localhost:3000/users/${id}`)
-    }
-
     return (
         <TableContainer>
             <Table variant='simple'>
