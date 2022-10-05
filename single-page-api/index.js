@@ -36,10 +36,10 @@ app.post("/users", (req, res) => {
   res.send("Success!!");
 });
 
-app.get("/products/:id", (req, res) => {
+app.get("/users/:id", (req, res) => {
     let id = req.params.id;
   
-    Product.findById(id, (err, doc) => {
+    User.findById(id, (err, doc) => {
       if (!err) {
         if (doc) res.json(doc);
         else res.status(404).json({ message: "Not found!" });
