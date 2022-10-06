@@ -1,0 +1,18 @@
+{
+  "rules": {
+    "selector-pseudo-class-no-unknown": [
+      true,
+      {
+        "ignorePseudoClasses": ["global"]
+      }
+    ]
+  },
+  "extends": "stylelint-config-standard",
+  "customSyntax": "postcss-lit",
+  "overrides": [
+    {
+      "files": ["**/*.{js}"],
+      "customSyntax": "postcss-lit"
+    }
+  ]
+}

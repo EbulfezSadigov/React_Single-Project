@@ -3,7 +3,7 @@ import { Formik, Form } from "formik";
 import { TextField } from "./TextField";
 import * as Yup from "yup";
 import axios from "axios";
-import { Button, ButtonGroup } from '@chakra-ui/react'
+import { Button } from "@chakra-ui/react";
 
 
 const Add = () => {
@@ -33,7 +33,7 @@ const Add = () => {
         axios.post("http://localhost:3000/users", values);
       }}
     >
-      {(formik) => (
+      {() => (
         <div>
           <h1 className="my-4 font-weight-bold .display-4">Add User</h1>
           <Form>
@@ -50,4 +50,4 @@ const Add = () => {
   );
 };
 
-export default Add
+export default Add;

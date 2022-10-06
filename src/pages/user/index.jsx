@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react'
-import axios from 'axios';
+import React from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
 import {
     Table,
     Thead,
@@ -8,18 +9,17 @@ import {
     Th,
     Td,
     TableContainer,
-} from '@chakra-ui/react'
+} from "@chakra-ui/react";
+import { Button } from "@chakra-ui/react";
 
-import { Button, ButtonGroup } from '@chakra-ui/react'
+export const User = () => {
 
-const User = () => {
-
-    const [data, setdata] = useState([])
+    const [data, setdata] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:3000/users')
-            .then(res => setdata(res.data))
-    }, [data])
+        axios.get("http://localhost:3000/users")
+            .then(res => setdata(res.data));
+    }, [data]);
 
     return (
         <TableContainer>
@@ -41,15 +41,13 @@ const User = () => {
                                     <Td>{data.lastname}</Td>
                                     <Td>{data.birthdate}</Td>
                                     <Td>{data.email}</Td>
-                                    <Td><Button colorScheme='red' size='sm' onClick={()=>axios.delete(`http://localhost:3000/users/${data._id}`)}>Delete</Button></Td>
+                                    <Td><Button colorScheme='red' size='sm' onClick={() => axios.delete(`http://localhost:3000/users/${data._id}`)}>Delete</Button></Td>
                                 </Tr>
-                            )
+                            );
                         })
                     }
                 </Tbody>
             </Table>
         </TableContainer>
-    )
-}
-
-export default User
+    );
+};

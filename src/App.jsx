@@ -1,19 +1,20 @@
-import './App.css'
-import { Route, Routes } from 'react-router'
-import Home from './pages/home'
-import About from './pages/about'
-import User from './pages/user'
+import "./App.css";
+import React, { Fragment } from "react";
+import { Route, Routes } from "react-router";
+import Home from "./pages/home";
+import About from "./pages/about";
+import { User } from "./pages/user";
 import { Link } from "react-router-dom";
-import Add from './pages/user/add'
+import Add from "./pages/user/add";
 
 
 function App() {
 
-  
+
 
   return (
     <>
-      <ul style={{ listStyleType: "none", display: "flex", justifyContent: 'center' }}>
+      <ul style={{ listStyleType: "none", display: "flex", justifyContent: "center" }}>
         <li style={{ paddingRight: 30 }}>
           <Link to="/" style={{ textDecoration: "none", fontSize: 30 }}>Home</Link>
         </li>
@@ -28,13 +29,13 @@ function App() {
         </li>
       </ul>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={< Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/users" element={<User />} />
         <Route path="/add" element={<Add />} />
       </Routes>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
